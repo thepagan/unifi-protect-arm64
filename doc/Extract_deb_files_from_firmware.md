@@ -3,7 +3,8 @@
 set -e
 
 sudo apt-get update \
-    && sudo apt-get -y install binwalk dpkg-repack dpkg
+    && sudo apt-get -y install binwalk dpkg-repack dpkg unar
+    && sudo ln -s /usr/bin/unar /usr/bin/stuffit
 
 wget -O fwupdate.bin <URL_OF_THE_UNVR_FIRMWARE.BIN>
 sudo binwalk -e fwupdate.bin
